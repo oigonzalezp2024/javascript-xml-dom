@@ -87,7 +87,7 @@ function controller(xml)
 }
 
 /**
- * Ejectua el código luego de cargadad la estructura HTML
+ * Ejectua el código luego de cargada la estructura HTML
  */
 document.addEventListener("DOMContentLoaded", () => {
 
