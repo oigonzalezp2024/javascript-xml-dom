@@ -144,7 +144,7 @@ function controller(xml)
 }
 
 /**
- * Ejectua el código luego de cargadad la estructura HTML
+ * Ejectua el código luego de cargada la estructura HTML
  */
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -167,4 +167,4 @@ Se ha usado "DOMContentLoaded" para evitar insertar código de javascript por fu
 document.addEventListener("DOMContentLoaded", () => {/*codigo*/});
 ```
 
-Cualquier aporte adicional que usted como lector crítico pueda aportar, será bienvenida. Muchas gracias por leer. 
+Cualquier aporte adicional que usted como desarrollador crítico pueda aportar, será bienvenido. Muchas gracias por leer. 
