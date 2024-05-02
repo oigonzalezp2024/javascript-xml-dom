@@ -1,60 +1,3 @@
-# Javascript - Estudio del método createElementNS()
-
-Para este estudio detallado hemos tenido en cuenta las
-lecciones notables de la W3school, sin embargo se identificó
-el uso de algunas prácticas que en la actualidad están en
-desuso por seguridad informática.
-
-![alt text](./images/image.png)
-
-El código de la W3School sobre createElementNS():
-
-```Javascript
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-   if (this.readyState == 4 && this.status == 200) {
-       myFunction(this);
-   }
-};
-xhttp.open("GET", "books.xml", true);
-xhttp.send();
-
-function myFunction(xml) {
-    var x, y, z, i, newel, newtext, xmlDoc, txt;
-    xmlDoc = xml.responseXML;
-    txt = "";
-    x = xmlDoc.getElementsByTagName("book");
-    // Create element nodes with namespace and text nodes
-    for (i = 0; i < x.length; i++) {
-        newel = xmlDoc.createElementNS("p", "edition");
-        newtext = xmlDoc.createTextNode("First");
-        newel.appendChild(newtext);
-        x[i].appendChild(newel);
-    }
-    // Output all titles and editions
-    y = xmlDoc.getElementsByTagName("title");
-    z = xmlDoc.getElementsByTagNameNS("p","edition");
-    for (i = 0; i < y.length; i++) {
-        txt += y[i].childNodes[0].nodeValue +
-        " - " +
-        z[i].childNodes[0].nodeValue +
-        " edition." +
-        " Namespace: " +
-        z[i].namespaceURI + "<br>";
-    }
-    document.getElementById("demo").innerHTML = txt;
-}
-```
-
-La documentación oficial de Mozilla, que da soporte a
-Javascript, recomienda dejar de usar ".innerHTML" por 
-seguridad informática, dada la necesidad, aquí se documenta
-una forma más adecuada de hacerlo:
-
-
-<b>./js/demo1Insert.js</b>
-
-```Javascript
 /**
  * Estructura de datos a cargar dentro del XML
  * @returns data
@@ -158,13 +101,3 @@ document.addEventListener("DOMContentLoaded", () => {
     xhttp.send();
 
 });
-
-```
-
-Se ha usado "DOMContentLoaded" para evitar insertar código de javascript por fuera de la etiqueta head. El código de javascript en su interior se ejecutará solo después de cargado el contenido de la estructura HTML.  
-
-```Javascript
-document.addEventListener("DOMContentLoaded", () => {/*codigo*/});
-```
-
-Cualquier aporte adicional que usted como lector crítico pueda aportar, será bienvenida. Muchas gracias por leer. 
